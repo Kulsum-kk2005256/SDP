@@ -20,7 +20,7 @@ def load_documents():
     global docsearch
     if docsearch is None:
         loader = SitemapLoader(
-            "C:\\Users\\iffat\\OneDrive - Qatar University\\CS\\Fall2023\\CMPS493\\sdp2324-cs-f-24\\Murshidi\\Sitemap2.xml",
+            r"Sitemap2.xml",
             is_local=True, continue_on_failure=True)
         # filter_urls=["https://ind.nl/en"]
 

@@ -17,9 +17,6 @@ from flask_cors import CORS
 
 nest_asyncio.apply()
 os.environ["OPENAI_API_KEY"] = "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"
-# os.environ["OPENAI_API_KEY"] = "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"
-# "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"
-# "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"
 
 app = Flask(__name__)
 CORS(app)
@@ -30,7 +27,7 @@ isInitialized=False
 def initialize_chatbot():
         global qa_with_sources
         loader = SitemapLoader(
-            "C:\\Users\\iffat\\OneDrive - Qatar University\\CS\\Fall2023\\CMPS493\\sdp2324-cs-f-24\\Murshidi-Final\\Sitemap2.xml",
+            r"Sitemap2.xml",
             is_local=True, continue_on_failure=True)
 
         docs = loader.load()
