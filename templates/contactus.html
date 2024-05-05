@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/mainstyle.css">
+    <link rel="stylesheet" href="../static/css/botstyle.css">
+    <script type="text/javascript" src="../static/js/chatbot.js"></script>
+    <title>Contact Us</title>
+    <link rel="icon" type="image/x-icon" href="../static/images/chatbot_icon_new.png" id="favicon">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html"><img src="../static/images/logo_h_new.png" alt="Murshidi Logo" id="logo"></a>
+            <ul>
+                <li class="links" id="toggle"><i class="fa-solid fa-toggle-on"></i></li>
+                <li class="links"><a href="/">Home</a></li>
+                <li class="links"><button class="button"><a href="#">Contact Us</a></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <button class="button" id="scroll"><img src="../static/images/chatbot_icon_new.png" alt="Open Murshidi" id="popup"
+                onclick="openBot()"></button>
+
+        <div id="chatbot-container">
+            <div id="header">
+                <h3>Murshidi مرشدي</h3>
+                <i class="fa-solid fa-xmark" onclick="closeBot()"></i>
+            </div>
+            <div id="chatbot">
+                <div id="conversation">
+                    <div class="chatbot-row">
+                        <img class="chatbot-icon" src="../static/images/chatbot_icon_new.png" alt="Chatbot Icon">
+                        <div class="chatbot-message">
+                            <p class="chatbot-text">Hi, I'm Murshidi! It's great to see you! How can I help you?
+                            </p>
+                        </div>
+                        <i class="fa-solid fa-microphone" id="speaker"></i>
+                    </div>
+                </div>
+                <div class="chatbot-row" id="loading">
+                    <div class="chatbot-message">
+                        <span id="jumping-dots">
+                            <p id="dot-1">.</p>
+                            <p id="dot-2">.</p>
+                            <p id="dot-3">.</p>
+                        </span>
+                    </div>
+                </div>
+                <form id="input-form">
+                    <message-container>
+                        <input id="input-field" type="text" placeholder="Ask Murshidi something...">
+                        <button id="voice-button" type="button"><i class="fa-solid fa-microphone"></i></button>
+                        <button id="submit-button" type="submit"><i class="fa-regular fa-paper-plane"></i></button>
+                    </message-container>
+                </form>
+            </div>
+        </div>
+
+        <section id="content">
+            <div id="contact">
+                <div class="card">
+                    <img src="../static/images/icon_blue.png" alt="Team Icon" class="team">
+                    <h4>Dr. Saleh Alhazbi</h4>
+                    <p><a href=mailto:“salhazbi@qu.edu.qa”>salhazbi@qu.edu.qa</a></p>
+                </div>
+                <div class="card">
+                    <img src="../static/images/icon_purple.png" alt="Team Icon" class="team">
+                    <h4>Iffat Said 202008187</h4>
+                    <p><a href=mailto:“is2008187@qu.edu.qa”>is2008187@qu.edu.qa</a></p>
+                </div>
+                <div class="card">
+                    <img src="../static/images/icon_pink.png" alt="Team Icon" class="team">
+                    <h4>Ikram Chebbak 20200859</h4>
+                    <p><a href=mailto:“ic2008509@qu.edu.qa”>ic2008509@qu.edu.qa</a></p>
+                </div>
+                <div class="card">
+                    <img src="../static/images/icon_orange.png" alt="Team Icon" class="team">
+                    <h4>Kulsum Kader 202005256</h4>
+                    <p><a href=mailto:kk2005256@qu.edu.qa”>kk2005256@qu.edu.qa</a></p>
+                </div>
+                <div class="card">
+                    <img src="../static/images/icon_yellow.png" alt="Team Icon" class="team">
+                    <h4>Ridita Razzak Ridi 201808552</h4>
+                    <p><a href=mailto:“rr1808552@qu.edu.qa”>rr1808552@qu.edu.qa</a></p>
+                </div>
+        </section>
+    </main>
+</body>
+
+<script>
+    function openBot() {
+        document.getElementById("chatbot-container").style.display = "block";
+        document.getElementById("popup").style.display = "none";
+    }
+
+    function closeBot() {
+        document.getElementById("chatbot-container").style.display = "none";
+        document.getElementById("popup").style.display = "block";
+    }
+</script>
+
+</html>

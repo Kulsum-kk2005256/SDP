@@ -1,0 +1,387 @@
+@font-face {
+    font-family: "Visby Round CF";
+    font-weight: 200;
+    src: url("../fonts/VisbyRoundCF-ExtraLight.woff")format("woff");
+}
+
+@font-face {
+    font-family: "Visby Round CF";
+    font-weight: 300;
+    src: url("../fonts/VisbyRoundCF-Light.woff")format("woff");
+}
+
+@font-face {
+    font-family: "Visby Round CF";
+    font-weight: 400;
+    src: url("../fonts/VisbyRoundCF-Regular.woff")format("woff");
+}
+
+@font-face {
+    font-family: "Visby Round CF";
+    font-weight: 500;
+    src: url("../fonts/VisbyRoundCF-Medium.woff")format("woff");
+}
+
+@font-face {
+    font-family: "Visby Round CF";
+    font-weight: 600;
+    src: url("../fonts/VisbyRoundCF-DemiBold.woff")format("woff");
+}
+
+@font-face {
+    font-family: "Visby Round CF";
+    font-weight: 700;
+    src: url("../fonts/VisbyRoundCF-Bold.woff")format("woff");
+}
+
+@font-face {
+    font-family: "Visby Round CF";
+    font-weight: 800;
+    src: url("../fonts/VisbyRoundCF-ExtraBold.woff")format("woff");
+}
+
+@font-face {
+    font-family: "Visby Round CF";
+    font-weight: 900;
+    src: url("../fonts/VisbyRoundCF-Heavy.woff")format("woff");
+}
+
+:root {
+    --main-color: #8A1739;
+    --accent-color: #FF1E8A;
+    --logo-url: url("../images/logo_v_new.png");
+    --nav-bar-color: #fdfafc;
+    --nav-shadow-color: #00000030;
+    --nav-link-color: #8A1739;
+    --body-color: #fdfafc;
+    --body-shadow-color: #00000048;
+    --card-shadow-color: #00000014;
+    --text-color: #202027;
+}
+
+.old-mode {
+    --main-color: #653D21;
+    --accent-color: #a58f82;
+    --logo-url: url("../images/logo_v_old.png");
+    --nav-link-color: #653D21;
+}
+
+.dark-mode {
+    --nav-bar-color: #282631;
+    --nav-shadow-color: #00000048;
+    --nav-link-color: #a62a4f;
+    --body-color: #1c1b23;
+    --body-shadow-color: #00000060;
+    --card-shadow-color: #00000060;
+    --text-color: #fdfafc;
+}
+
+.dark-mode-old {
+    --nav-link-color: #785034;
+}
+
+* {
+    color: var(--text-color);
+    font-family: "Visby Round CF", Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+body {
+    background-image: linear-gradient(to bottom, var(--main-color), var(--accent-color));
+    min-height: 80vh;
+}
+
+nav {
+    background-color: var(--nav-bar-color);
+    border-radius: 0 0 0.5rem 0.5rem;
+    box-shadow: 0 0.15rem 0.15rem 0 var(--nav-shadow-color);
+    display: flex;
+    flex-flow: row nowrap;
+    height: 6rem;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+nav ul {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 2rem;
+    padding: 1rem 0.75rem;
+}
+
+main {
+    display: grid;
+    grid-template-areas: ". main .";
+    grid-template-columns: 7.5vw 85vw 7.5vw;
+    min-height: 100%;
+    margin-top: 6rem;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    text-align: center;
+}
+
+#logo {
+    height: 4.5rem;
+    margin: 0.5rem 0 0 0.5rem;
+}
+
+#scroll {
+    bottom: 0.5rem;
+    height: 4rem;
+    padding: 0;
+    position: fixed;
+    right: 0.5rem;
+    width: 4rem;
+    cursor: pointer;
+    transition: transform .5s ease-in-out;
+    border: 0.1rem solid white;
+    border-radius: 50%;
+}
+
+#scroll:hover {
+    transform: rotate(360deg) scale(1.25);
+}
+
+#popup {
+    width: 100%;
+    height: 100%;
+}
+
+#content {
+    background-color: var(--body-color);
+    box-shadow: 0 0 1rem var(--body-shadow-color), 0 0 1rem var(--body-shadow-color);
+    display: flex;
+    gap: 2rem;
+    flex-flow: column nowrap;
+    grid-area: main;
+    min-height: 80vh;
+    padding: 2rem;
+}
+
+#card-holder {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 2rem;
+}
+
+#contact {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+    height: 80%;
+}
+
+h4+p {
+    font-size: 0.9em;
+}
+
+.card {
+    background-color: var(--nav-bar-color);
+    border-radius: 1rem;
+    box-shadow: 0 0.1rem 1rem 0 var(--card-shadow-color), 0 0 0 0.1rem var(--card-shadow-color);
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2.5rem;
+    padding: 1.5rem;
+}
+
+#contact .card {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.row p,
+.row h3 {
+    white-space: nowrap;
+}
+
+.team {
+    width: 4.5rem;
+}
+
+#details {
+    flex-grow: 2;
+}
+
+#details .card:first-child {
+    margin-bottom: 2rem;
+}
+
+a:has(#logo) {
+    position: unset;
+}
+
+a,
+.links a,
+.links i {
+    color: var(--nav-link-color);
+    position: relative;
+    text-decoration: none;
+    top: 20%;
+}
+
+.links i {
+    margin-top: 0.2rem;
+    font-size: 1.2em;
+}
+
+a:hover,
+.links a:hover {
+    text-decoration: wavy underline;
+}
+
+.links {
+    list-style-type: none;
+    margin: 0 0.5rem;
+}
+
+.button {
+    background-color: var(--nav-link-color);
+    background-image: linear-gradient(to right, var(--main-color), var(--accent-color));
+    border: 0;
+    border-radius: 6rem;
+    cursor: pointer;
+    font-size: 1em;
+    height: 100%;
+    margin: 0;
+    padding: 0.45rem 1.2rem;
+}
+
+.button,
+.button a {
+    color: var(--nav-bar-color);
+    position: unset;
+}
+
+.button:hover {
+    background-color: var(--nav-bar-color);
+    background-image: none;
+    box-shadow: inset 0 0 0 2px var(--nav-link-color), inset 0 0 0 2px var(--nav-link-color);
+}
+
+.button:hover a {
+    color: var(--nav-link-color);
+    text-decoration: none;
+}
+
+@media screen and (width<481px) {
+    * {
+        font-size: 0.9rem;
+    }
+
+    main {
+        grid-template-columns: 0 100vw 0;
+    }
+
+    .button {
+        font-size: 0.7rem;
+        padding: 0.45rem 0.75rem;
+    }
+
+    .button:hover {
+        box-shadow: inset 0 0 0 1px var(--nav-link-color), inset 0 0 0 1px var(--nav-link-color);
+    }
+
+    .row {
+        flex-flow: row wrap;
+    }
+
+    .row p,
+    .row h3 {
+        white-space: unset;
+    }
+
+    .team {
+        width: 3rem;
+    }
+
+    #logo {
+        content: var(--logo-url);
+    }
+
+    #contact {
+        flex-flow: column nowrap;
+    }
+}
+
+@media screen and (481px<=width<768px) {
+    * {
+        font-size: 0.9rem;
+    }
+
+    main {
+        grid-template-columns: 0 100vw 0;
+    }
+
+    .button {
+        font-size: 0.7rem;
+        padding: 0.45rem 0.75rem;
+    }
+
+    .button:hover {
+        box-shadow: inset 0 0 0 1px var(--nav-link-color), inset 0 0 0 1px var(--nav-link-color);
+    }
+
+    #contact {
+        flex-flow: column nowrap;
+    }
+}
+
+@media screen and (1440px<=width),
+(width<1280) {
+    body {
+        min-height: 100vh;
+    }
+
+    #content {
+        min-height: 100vh;
+    }
+}
+
+@media screen and (768px<=width<1024px) {
+    main {
+        grid-template-columns: 0 100vw 0;
+    }
+
+    #contact {
+        flex-flow: column nowrap;
+    }
+}
+
+@media screen and (1024px<=width<1280px) {
+    main {
+        grid-template-columns: 5vw 90vw 5vw;
+    }
+
+    #contact {
+        flex-flow: column nowrap;
+    }
+}
+
+@media screen and (1920px<=width<2160px) {
+    main {
+        grid-template-columns: 20vw 60vw 20vw;
+    }
+}
+
+@media screen and (2160px<=width) {
+    main {
+        grid-template-columns: 25vw 50vw 25vw;
+    }
+}

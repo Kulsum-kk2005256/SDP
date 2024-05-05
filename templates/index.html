@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/mainstyle.css">
+    <link rel="stylesheet" href="../static/css/botstyle.css">
+    <title>Murshidi</title>
+    <link rel="icon" type="image/x-icon" href="../static/images/chatbot_icon_new.png" id="favicon">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="#"><img src="../static/images/logo_h_new.png" alt="Murshidi Logo" id="logo"></a>
+            <ul>
+                <li class="links" id="dark-toggle"><i class="fa-regular fa-moon"></i></li>
+                <li class="links" id="old-toggle"><i class="fa-solid fa-toggle-on"></i></li>
+                <li class="links"><a href="#">Home</a></li>
+                <li class="links"><button class="button"><a href="/contactus">Contact Us</a></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <button class="button" id="scroll"><img src="../static/images/chatbot_icon_new.png" alt="Open Murshidi" id="popup"
+                onclick="openBot()"></button>
+
+        <div id="chatbot-container">
+            <div id="header">
+                <h3>Murshidi مرشدي</h3>
+                <i class="fa-solid fa-xmark" onclick="closeBot()"></i>
+            </div>
+            <div id="chatbot">
+                <div id="conversation">
+                    <div class="chatbot-row">
+                        <img class="chatbot-icon" src="../static/images/chatbot_icon_new.png" alt="Chatbot Icon" id="chatIcon">
+                        <div class="chatbot-message">
+                            <p class="chatbot-text" id="initialText">Hi, I'm Murshidi! It's great to see you! How can I help you?</p>
+                        </div>
+                        <i class="fa-solid fa-volume-up" id="speaker"></i>
+                    </div>
+                </div>
+                <div class="chatbot-row" id="loading">
+                    <div class="chatbot-message">
+                        <span id="jumping-dots">
+                            <p id="dot-1">.</p>
+                            <p id="dot-2">.</p>
+                            <p id="dot-3">.</p>
+                        </span>
+                    </div>
+                </div>
+                <form id="input-form">
+                    <message-container>
+                        <input id="input-field" type="text" placeholder="Ask Murshidi something...">
+                        <button id="voice-button" type="button"><i class="fa-solid fa-microphone"></i></button>
+                        <button id="submit-button" type="submit"><i class="fa-regular fa-paper-plane"></i></button>
+                    </message-container>
+                </form>
+            </div>
+        </div>
+
+        <section id="content">
+            <div id="card-holder">
+                <div class="card">
+                    <h2>Meet the Team</h2>
+                    <div class="row">
+                        <img src="../static/images/icon_blue.png" alt="Team Icon" class="team">
+                        <div>
+                            <h3>Supervisor</h3>
+                            <p>Dr. Saleh Alhazbi</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="../static/images/icon_purple.png" alt="Team Icon" class="team">
+                        <div>
+                            <h3>Iffat Said</h3>
+                            <p>202008187</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="../static/images/icon_pink.png" alt="Team Icon" class="team">
+                        <div>
+                            <h3>Ikram Chebbak</h3>
+                            <p>202008509</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="../static/images/icon_orange.png" alt="Team Icon" class="team">
+                        <div>
+                            <h3>Kulsum Kader</h3>
+                            <p>202005256</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="../static/images/icon_yellow.png" alt="Team Icon" class="team">
+                        <div>
+                            <h3>Ridita Razzak Ridi</h3>
+                            <p>201808552</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="details">
+                    <div class="card">
+                        <h2>What Murshidi Can Do</h2>
+                        <p>Murshidi is an AI-powered chatbot designed to answer questions about Qatar University<br><br>
+                            The chatbot has dual-language capabilities, i.e. it can answer questions in both English and
+                            Arabic<br><br>
+                            Murshidi is also equipped with advanced features that enable users to engage through voice input and receive spoken responses seamlessly<br><br>
+                            Compared to searching online for answers, Murshidi can deliver accurate answers far faster
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h2>Future Plans</h2>
+                        <p>Murshidi is currently only available online, but a mobile version for Android and iOS is in
+                            development<br><br>
+                            We plan to expand on the dual-language capability to include arabic voice chat as
+                            well<br><br>
+                            As we get to better understand what users are looking for, we plan to expand the sources of
+                            information that Murshidi gets its information from, such as the official university social
+                            media accounts or email information</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h2>The Vision</h2>
+                <p>We hope that, once Murshidi becomes fully developed and functional, it can be deployed on the
+                    official
+                    Qatar University website to make it easier to access for all sorts of users, whether they are new
+                    students, prospective students, parents, long-time students, advisors, or even faculty</p>
+                <img src="../static/images/on_the_website.png" alt="On The Website">
+            </div>
+        </section>
+    </main>
+</body>
+
+<script>
+    function openBot() {
+        document.getElementById("chatbot-container").style.display = "block";
+        document.getElementById("popup").style.display = "none";
+    }
+
+    function closeBot() {
+        document.getElementById("chatbot-container").style.display = "none";
+        document.getElementById("popup").style.display = "block";
+    }
+</script>
+<script type="text/javascript" src="../static/js/chatbot.js"></script>
+</html>
