@@ -36,7 +36,7 @@ def initialize_chatbot():
 
         # Assuming your text file contains the document text separated by newlines
         fileContents=""
-        with open("C:\\Users\\iffat\\OneDrive - Qatar University\\CS\\Fall2023\\CMPS493\\sdp2324-cs-f-24\\SDP2324-CS-F-24-Murshidi\\QUdata.txt", "r", encoding="utf-8") as file:
+        with open("QUdata.txt", "r", encoding="utf-8") as file:
         # Read the contents of the text file
             fileContents = file.read()
 
