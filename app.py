@@ -17,7 +17,7 @@ from flask_cors import CORS
 import speech_recognition as sr
 
 nest_asyncio.apply()
-openai_api_key  = "sk-proj-QLeNzXYi7SVyJmMxMpCiT3BlbkFJ2p8glu7xSVgrKbHYLJmJ"
+openai_api_key  = "sk-proj-Leeg3gnsDjbpu4CE1xS3T3BlbkFJkPdz22QUKFXsc2NPUSNp"
 
 app = Flask(__name__,  static_url_path='/static')
 CORS(app)
@@ -36,7 +36,7 @@ def initialize_chatbot():
 
         # Assuming your text file contains the document text separated by newlines
         fileContents=""
-        with open("QUdata.txt", "r", encoding="utf-8") as file:
+        with open(r'QUdata.txt', "r", encoding="utf-8") as file:
         # Read the contents of the text file
             fileContents = file.read()
 
